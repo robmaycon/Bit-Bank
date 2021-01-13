@@ -35,7 +35,7 @@ console.log(robertoAccount);
 
 //withdrawn
 const withdrawnValue = robertoAccount.withdrawn(50);
-console.log(withdrawnValue);
+console.log(`The Withdrawn Value was NZ$${withdrawnValue}`);
 
 
 
