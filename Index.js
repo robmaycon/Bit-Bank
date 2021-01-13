@@ -8,11 +8,8 @@ console.log(robertoAccount);
 
 // Deposit
 robertoAccount.deposit(100);
-console.log(robertoAccount);
-robertoAccount.deposit(100);
-console.log(robertoAccount);
-robertoAccount.deposit(100);
-console.log(robertoAccount);
+console.log(`Deposit of NZ$${robertoAccount.deposit(100)}`);
+
 
 //withdrawn
 const withdrawnValue = robertoAccount.withdrawn(50);

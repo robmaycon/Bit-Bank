@@ -13,6 +13,7 @@ export class Account {
     deposit(value) {
         if (value > 0){
             this._balance += value;
+            return value;
         };
     };
 };
