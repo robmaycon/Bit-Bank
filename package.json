@@ -1,0 +1,20 @@
+{
+  "name": "bitbank",
+  "version": "1.0.0",
+  "description": "Project of a bank for a client",
+  "main": "index.js",
+  "scripts": {
+    "test": "Bit-Bank"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robmaycon/Bit-Bank.git"
+  },
+  "author": "Rob Maycon",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/robmaycon/Bit-Bank/issues"
+  },
+  "homepage": "https://github.com/robmaycon/Bit-Bank#readme"
+}
