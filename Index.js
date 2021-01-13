@@ -5,18 +5,19 @@ class Client {
 };
 
 class Account {
-    #balance = 0;
+    _balance = 0;
     batch;
 
     withdrawn(value) {
-        if (this.#balance >= value){
-            this.#balance -= value;
+        if (this._balance >= value){
+            this._balance -= value;
+            return value;
         };
     };
 
     deposit(value) {
         if (value > 0){
-            this.#balance += value;
+            this._balance += value;
         };
     };
 };
@@ -28,11 +29,13 @@ console.log(robertoAccount);
 
 // Deposit
 robertoAccount.deposit(100);
+robertoAccount.deposit(100);
+robertoAccount.deposit(100);
 console.log(robertoAccount);
 
 //withdrawn
-robertoAccount.withdrawn(50);
-console.log(robertoAccount);
+const withdrawnValue = robertoAccount.withdrawn(50);
+console.log(withdrawnValue);
 
 
 
