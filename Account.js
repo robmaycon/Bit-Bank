@@ -1,7 +1,10 @@
 
 export class Account {
-    _balance = 0;
     batch;
+    client;
+    
+    _balance = 0;
+
 
     withdrawn(value) {
         if (this._balance >= value){
@@ -16,4 +19,11 @@ export class Account {
             return value;
         };
     };
+
+    transfer(value, account) {
+
+        const valueWithdrawn = this.withdrawn(value);
+        account.deposit(valueWithdrawn);
+
+    }
 };
