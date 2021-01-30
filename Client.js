@@ -1,7 +1,5 @@
  
 export class Client {
-    name;
-    _id;
 
     get id(){
         return this._id;

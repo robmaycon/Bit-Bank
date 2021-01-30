@@ -1,10 +1,9 @@
-import { Client } from "./Client.js";
-
 export class Account {
-    static numberOfAccounts = 0;
-    batch;
-    client;
-
+    constructor(batch, client, balance){
+        this._batch = batch;
+        this._client = client;
+        this._balance = balance;
+    };
     set client(newValue){
         if(newValue instanceof Client){
             this._client = newValue;
@@ -15,25 +14,23 @@ export class Account {
         return this._client;
     };
 
-
-    _balance = 0;
-
     get balance() {
         return this._balance;
     };
 
-    constructor(batch, client){
-        this.batch = batch;
-        this.client = client;
-        Account.numberOfAccounts += 1;
-    };
-
-
     withdrawn(value) {
-        if (this._balance >= value){
-            this._balance -= value;
-            return value;
+        let tax = 1
+        return this._withdrawn(value, tax);
+    };
+    _withdrawn(value, tax) {
+        
+        const withdrawnValue = tax * value;
+        if (this._balance >= withdrawnValue){
+            this._balance -= withdrawnValue;
+            return withdrawnValue;
         };
+
+        return 0;
     };
 
     deposit(value) {
@@ -48,5 +45,5 @@ export class Account {
         const valueWithdrawn = this.withdrawn(value);
         account.deposit(valueWithdrawn);
 
-    }
-};
+    };
+}
