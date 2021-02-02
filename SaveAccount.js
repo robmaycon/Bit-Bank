@@ -6,4 +6,9 @@ export class SaveAccount extends Account {
         super(batch, client, balance);
     };
 
+    withdrawn(value) {
+        let tax = 1.02
+        return this._withdrawn(value, tax);
+    };
+
 };

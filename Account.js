@@ -1,5 +1,9 @@
 export class Account {
     constructor(batch, client, balance){
+        if (this.constructor == Account){
+            throw new Error ("You can't use the Object 'Account'!");
+        };
+
         this._batch = batch;
         this._client = client;
         this._balance = balance;
@@ -19,8 +23,7 @@ export class Account {
     };
 
     withdrawn(value) {
-        let tax = 1
-        return this._withdrawn(value, tax);
+       throw new Error ('You need an Inheritance to use this');
     };
     _withdrawn(value, tax) {
         
