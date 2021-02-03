@@ -1,27 +1,30 @@
-import { Account } from "./Account.js";
-import {Client} from "./Client.js"
-import {CurrentAccount} from "./CurrentAccount.js"
-import { SaveAccount } from "./SaveAccount.js";
-import {SalaryAccount}  from "./SalaryAccount.js";
+import {Client} from "./Client/Client.js"
+import {Employee} from "./Employee/Employee.js"
+import { Manager } from "./Employee/Manager.js";
+import { Director } from "./Employee/Director.js";
+import { AuthenticationSystem } from "./Employee/AuthenticationSystem.js";
 
-//Clients
-const client1 = new Client('Roberto', 11223344);
-const client2 = new Client('Rose',44332211 );
+const director1 = new Director ('Wang', 5000, 358);
+director1.creatPassword("123456");
+const manager1 = new Manager ('Brista', 800, 458);
+manager1.creatPassword("bolacha")
+const client1 = new Client ("Maria", 1234597, "5565");
 
+const active1 = AuthenticationSystem.login(director1, "1");
 
-// initial balance
-const account1 = new CurrentAccount(1001,client1);
-account1.deposit(300);
-account1.withdrawn(100);
-const saveAccount = new SaveAccount(1001,client1, 500);
-saveAccount.deposit(200);
-saveAccount.withdrawn(50);
-const account2 = new SalaryAccount(100, client1);
-account2.deposit(500);
-account2.withdrawn(100);
+const active2 = AuthenticationSystem.login(manager1, "olacha");
+
+const active3 = AuthenticationSystem.login(client1, "565");
 
 
-console.log(account2);
+console.log(active1);
+console.log(active2);
+console.log(active3);
+
+
+
+
+
 
 
 
